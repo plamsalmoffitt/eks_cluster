@@ -34,20 +34,7 @@ module "s3_bucket_terraform_remote_backend" {
   restrict_public_buckets = var.restrict_public_buckets
 }
 
-########################################
-## Dynamodb for TF state locking
-########################################
-module "dynamodb_terraform_state_lock" {
-  source         = "../../resource_modules/database/dynamodb"
-  name           = local.dynamodb_name
-  read_capacity  = var.read_capacity
-  write_capacity = var.write_capacity
-  hash_key       = var.hash_key
-  attribute_name = var.attribute_name
-  attribute_type = var.attribute_type
-  sse_enabled    = var.sse_enabled
-  tags           = var.tags
-}
+
 
 ########################################
 ## KMS
