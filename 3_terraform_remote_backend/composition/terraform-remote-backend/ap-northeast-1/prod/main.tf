@@ -22,13 +22,5 @@ module "terraform_remote_backend" {
   ignore_public_acls      = var.ignore_public_acls
   restrict_public_buckets = var.restrict_public_buckets
 
-  ########################################
-  ## DynamoDB
-  ########################################
-  read_capacity  = var.read_capacity
-  write_capacity = var.write_capacity
-  hash_key       = var.hash_key
-  attribute_name = var.attribute_name
-  attribute_type = var.attribute_type
-  sse_enabled    = var.sse_enabled
+
 }
